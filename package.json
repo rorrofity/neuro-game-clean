@@ -1,0 +1,39 @@
+{
+  "name": "neurological-rehabilitation-game",
+  "version": "1.0.0",
+  "description": "A simple web-based arrow game for neurological rehabilitation",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build": "expo build:web",
+    "start-web": "expo start --web-only",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d web-build"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "^18.0.1",
+    "expo": "^48.0.0",
+    "expo-linear-gradient": "~12.1.2",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.71.14",
+    "react-native-svg": "13.4.0",
+    "react-native-web": "~0.18.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/preset-react": "^7.20.0",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "gh-pages": "^5.0.0",
+    "style-loader": "^3.3.1"
+  },
+  "private": true,
+  "homepage": "https://rorrofity.github.io/neuro-game"
+}
