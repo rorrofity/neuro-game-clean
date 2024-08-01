@@ -45,8 +45,8 @@ module.exports = async function(env, argv) {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets', to: 'assets' },
-        { from: 'web-build/static', to: 'static' },
-        { from: 'web-build/manifest.json', to: 'manifest.json' },
+        { from: 'static', to: 'static' },
+        { from: 'manifest.json', to: 'manifest.json' },
       ],
     })
   );
