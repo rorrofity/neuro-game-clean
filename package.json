@@ -8,7 +8,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "expo build:web",
+    "build": "expo export:web",
     "start-web": "expo start --web-only",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d web-build"
@@ -36,5 +36,5 @@
     "webpack-dev-server": "^4.15.1"
   },
   "private": true,
-  "homepage": "https://rorrofity.github.io/neuro-game"
+  "homepage": "https://rorrofity.github.io/juego-flechas"
 }
