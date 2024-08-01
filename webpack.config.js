@@ -34,5 +34,10 @@ module.exports = async function(env, argv) {
     'react-native$': 'react-native-web',
   };
 
+  // Set the correct public path for GitHub Pages
+  if (env.mode === 'production') {
+    config.output.publicPath = '/juego-flechas/';
+  }
+
   return config;
 };
