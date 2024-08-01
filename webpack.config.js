@@ -44,7 +44,6 @@ module.exports = async function(env, argv) {
   config.plugins.push(
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'static', to: 'static' },
         { from: 'manifest.json', to: 'manifest.json' },
       ],
     })
