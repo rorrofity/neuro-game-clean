@@ -1,5 +1,6 @@
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = async function(env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv);
@@ -38,6 +39,17 @@ module.exports = async function(env, argv) {
   if (env.mode === 'production') {
     config.output.publicPath = '/juego-flechas/';
   }
+
+  // Add CopyWebpackPlugin to copy static assets
+  config.plugins.push(
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'assets', to: 'assets' },
+        { from: 'web-build/static', to: 'static' },
+        { from: 'web-build/manifest.json', to: 'manifest.json' },
+      ],
+    })
+  );
 
   return config;
 };
