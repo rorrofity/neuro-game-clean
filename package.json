@@ -11,7 +11,7 @@
     "build": "expo export:web",
     "start-web": "expo start --web-only",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d web-build"
+    "deploy": "gh-pages -d web-build -b main"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
