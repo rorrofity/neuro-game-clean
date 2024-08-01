@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "build": "expo export:web",
     "start-web": "expo start --web-only",
-    "predeploy": "npm run build && cp manifest.json web-build/",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d web-build"
   },
   "dependencies": {
