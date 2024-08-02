@@ -34,9 +34,9 @@ module.exports = async function(env, argv) {
     'react-native$': 'react-native-web',
   };
 
-  // Set the correct public path for GitHub Pages
+  // Set the correct public path
   if (env.mode === 'production') {
-    config.output.publicPath = 'https://rorrofity.github.io/neuro-game-clean/';
+    config.output.publicPath = './';
   }
 
   return config;
