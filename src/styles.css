@@ -29,45 +29,46 @@ body {
 }
 
 .game-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #9d0e0e;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-align: center;
   font-weight: 700;
   width: 100%;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .activity-selector {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   width: 100%;
 }
 
 .activity-button {
-  padding: 12px 24px;
-  margin: 0 20px;
-  font-size: 1rem;
-  background-color: #4ECDC4;
+  padding: 15px 30px;
+  margin: 0 30px;
+  font-size: 1.1rem;
+  background: linear-gradient(to bottom right, #4ECDC4, #45B7D1);
   border: none;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 5px;
+  border-radius: 25px;
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .activity-button:hover {
-  background-color: #45B7D1;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #45B7D1, #4ECDC4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .activity-button.active {
-  background-color: #45B7D1;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #45B7D1, #4ECDC4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .placeholder {

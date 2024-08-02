@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Game from './components/Game';
 import ActivitySelector from './components/ActivitySelector';
-import './styles.css';
+import './src/styles.css';
 
 const App = () => {
   const [currentActivity, setCurrentActivity] = useState('arrows');
