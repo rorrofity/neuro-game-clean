@@ -36,7 +36,7 @@ module.exports = async function(env, argv) {
 
   // Set the correct public path for GitHub Pages
   if (env.mode === 'production') {
-    config.output.publicPath = 'https://rorrofity.github.io/juego-flechas/';
+    config.output.publicPath = 'https://rorrofity.github.io/neuro-game-clean/';
   }
 
   return config;
