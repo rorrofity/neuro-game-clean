@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1 className="game-title">Actividad Rehabilitacion</h1>
+      <h1 className="game-title">Actividades de Rehabilitación</h1>
       <ActivitySelector
         currentActivity={currentActivity}
         onActivitySelect={setCurrentActivity}
@@ -17,7 +17,7 @@ const App = () => {
         <Game />
       ) : (
         <div className="placeholder">
-          <h2>Numeros y movimientos</h2>
+          <h2>Números y movimientos</h2>
           <p>Esta actividad está en desarrollo.</p>
         </div>
       )}
