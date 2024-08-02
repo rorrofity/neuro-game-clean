@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/juego-flechas/static/js/main.7391656a.js",
-    "static/js/795.8a10938d.js": "/juego-flechas/static/js/795.8a10938d.js",
-    "index.html": "/juego-flechas/index.html",
-    "manifest.json": "/juego-flechas/manifest.json",
-    "serve.json": "/juego-flechas/serve.json",
-    "main.7391656a.js.map": "/juego-flechas/static/js/main.7391656a.js.map",
-    "795.8a10938d.js.map": "/juego-flechas/static/js/795.8a10938d.js.map"
+    "main.js": "/neuro-game-clean/static/js/main.7391656a.js",
+    "static/js/795.8a10938d.js": "/neuro-game-clean/static/js/795.8a10938d.js",
+    "index.html": "/neuro-game-clean/index.html",
+    "manifest.json": "/neuro-game-clean/manifest.json",
+    "serve.json": "/neuro-game-clean/serve.json",
+    "main.7391656a.js.map": "/neuro-game-clean/static/js/main.7391656a.js.map",
+    "795.8a10938d.js.map": "/neuro-game-clean/static/js/795.8a10938d.js.map"
   },
   "entrypoints": [
     "static/js/795.8a10938d.js",
