@@ -8,7 +8,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "expo export:web",
+    "build": "expo export:web && cp 404.html web-build/",
     "start-web": "expo start --web-only",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d web-build"
@@ -37,5 +37,5 @@
     "webpack-dev-server": "^4.15.1"
   },
   "private": true,
-  "homepage": "https://rorrofity.github.io/juego-flechas"
+  "homepage": "https://rorrofity.github.io/juego-flechas/"
 }
