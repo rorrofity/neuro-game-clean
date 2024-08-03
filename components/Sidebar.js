@@ -2,27 +2,25 @@ import React from 'react';
 
 const Sidebar = ({ currentLevel, onLevelSelect, levels }) => {
   return (
-    <div style={styles.sidebar}>
-      <h2 style={styles.title}>Niveles</h2>
-      {levels.map((level) => (
-        <button
-          key={level}
-          style={{
-            ...styles.levelButton,
-            ...(currentLevel === level ? styles.activeLevel : {})
-          }}
-          onClick={() => onLevelSelect(level)}
-        >
-          Nivel {level}
-        </button>
-      ))}
+    <div className="sidebar">
+      <h2>Actividades de Rehabilitación</h2>
+      <div className="level-selector">
+        <h3>Niveles</h3>
+        {levels.map((level) => (
+          <button
+            key={level}
+            className={`level-button ${currentLevel === level ? 'active' : ''}`}
+            onClick={() => onLevelSelect(level)}
+          >
+            Nivel {level}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
 
-const styles = {
-  sidebar: {
-    width: '150px',
+export default Sidebar;
     backgroundColor: '#f0f0f0',
     padding: '20px',
     borderRight: '1px solid #e0e0e0',
