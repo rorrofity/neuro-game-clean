@@ -167,7 +167,6 @@ const Game = ({ currentLevel }) => {
           )}
         </div>
       </div>
-    </div>
   );
 };
 
