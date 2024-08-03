@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Board from './Board';
 import ControlButton from './ControlButton';
-import Sidebar from './Sidebar';
 import Timer from './Timer';
 
-const Game = () => {
+const Game = ({ currentLevel }) => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
   const [currentArrow, setCurrentArrow] = useState(null);
   const [currentPosition, setCurrentPosition] = useState(0);
-  const [currentLevel, setCurrentLevel] = useState(1);
   const [arrows, setArrows] = useState(Array(16).fill({ direction: null, color: '#E0E0E0', active: false, position: null }));
   const [colorHistory, setColorHistory] = useState([]);
   const [timerActive, setTimerActive] = useState(false);
@@ -120,19 +118,13 @@ const Game = () => {
     }
   };
 
-  const handleLevelSelect = (level) => {
-    setCurrentLevel(level);
-    finishGame();
-  };
-
   useEffect(() => {
-    // Remove this effect as we no longer want to automatically finish the game
-  }, []);
+    // Reset the game when the level changes
+    finishGame();
+  }, [currentLevel]);
 
   return (
-    <div style={styles.container}>
-      <Sidebar currentLevel={currentLevel} onLevelSelect={handleLevelSelect} levels={[1, 2, 3]} />
-      <div style={styles.gameArea}>
+    <div style={styles.gameArea}>
         <div style={styles.timerContainer}>
           <Timer active={timerActive} onFinish={setFinalTime} timerKey={timerKey} gameFinished={gameFinished} />
         </div>
@@ -180,18 +172,13 @@ const Game = () => {
 };
 
 const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-  },
   gameArea: {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: '20px',
+    width: '100%',
   },
   timerContainer: {
     width: '100%',
