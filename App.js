@@ -8,19 +8,21 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1 className="game-title">Actividades de Rehabilitación</h1>
-      <ActivitySelector
-        currentActivity={currentActivity}
-        onActivitySelect={setCurrentActivity}
-      />
-      {currentActivity === 'arrows' ? (
-        <Game />
-      ) : (
-        <div className="placeholder">
-          <h2>Números y movimientos</h2>
-          <p>Esta actividad está en desarrollo.</p>
-        </div>
-      )}
+      <div className="main-content">
+        <h1 className="game-title">Actividades de Rehabilitación</h1>
+        <ActivitySelector
+          currentActivity={currentActivity}
+          onActivitySelect={setCurrentActivity}
+        />
+        {currentActivity === 'arrows' ? (
+          <Game />
+        ) : (
+          <div className="placeholder">
+            <h2>Números y movimientos</h2>
+            <p>Esta actividad está en desarrollo.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -28,9 +28,22 @@ body {
   box-sizing: border-box;
 }
 
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
 .game-title {
   font-size: 2.8rem;
-  color: #9d0e0e;
+  color: #030d4f;
   margin-bottom: 40px;
   text-align: center;
   font-weight: 700;
@@ -49,24 +62,24 @@ body {
   padding: 15px 30px;
   margin: 0 30px;
   font-size: 1.1rem;
-  background: linear-gradient(to bottom right, #4ECDC4, #45B7D1);
+  background-color: #a4bdbc;
   border: none;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 25px;
+  border-radius: 10px;
   font-weight: 600;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .activity-button:hover {
-  background: linear-gradient(to bottom right, #45B7D1, #4ECDC4);
+  background-color: #93aba9;
   transform: translateY(-3px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .activity-button.active {
-  background: linear-gradient(to bottom right, #45B7D1, #4ECDC4);
+  background-color: #93aba9;
   transform: translateY(-3px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
