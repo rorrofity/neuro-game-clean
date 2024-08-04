@@ -5,11 +5,13 @@ const ControlButton = ({ title, onPress, color, style }) => {
   return (
     <TouchableOpacity 
       onPress={onPress} 
-      style={[
+      style={StyleSheet.compose(
         styles.button,
-        { backgroundColor: color },
-        style
-      ]}
+        [
+          { backgroundColor: color },
+          style
+        ]
+      )}
     >
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
