@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Game from './components/Game';
-import ActivitySelector from './components/ActivitySelector';
+import LeftSidebar from './components/LeftSidebar';
 import Sidebar from './components/Sidebar';
 import './src/styles.css';
 
@@ -14,12 +14,11 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <LeftSidebar
+        currentActivity={currentActivity}
+        onActivitySelect={setCurrentActivity}
+      />
       <div className="main-content">
-        <h1 className="game-title">Actividades de Rehabilitación</h1>
-        <ActivitySelector
-          currentActivity={currentActivity}
-          onActivitySelect={setCurrentActivity}
-        />
         {currentActivity === 'arrows' ? (
           <Game currentLevel={currentLevel} />
         ) : (
