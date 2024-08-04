@@ -19,6 +19,7 @@ const ColorsAndMovements = () => {
   const [currentColor, setCurrentColor] = useState('');
   const [timerActive, setTimerActive] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
+  const [activityStopped, setActivityStopped] = useState(false);
 
   useEffect(() => {
     generateNewActivity();
@@ -34,34 +35,53 @@ const ColorsAndMovements = () => {
   const startActivity = () => {
     setTimerActive(true);
     setTimerKey(prevKey => prevKey + 1);
+    setActivityStopped(false);
     generateNewActivity();
   };
 
   const stopActivity = () => {
     setTimerActive(false);
+    setActivityStopped(true);
+  };
+
+  const restartActivity = () => {
+    setTimerActive(false);
+    setActivityStopped(false);
+    setTimerKey(prevKey => prevKey + 1);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.timerContainer}>
-        <Timer active={timerActive} onFinish={() => {}} timerKey={timerKey} gameFinished={false} />
+        <Timer active={timerActive} onFinish={() => {}} timerKey={timerKey} gameFinished={activityStopped} />
       </View>
       <View style={styles.activityContainer}>
-        <Text style={[styles.activityText, { color: currentColor, textShadowColor: 'rgba(0, 0, 0, 0.75)', textShadowOffset: {width: -1, height: 1}, textShadowRadius: 10 }]}>{currentActivity}</Text>
+        <Text style={[styles.activityText, { color: currentColor }]}>{currentActivity}</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <ControlButton
-          title={timerActive ? "Detener" : "Iniciar"}
-          onPress={timerActive ? stopActivity : startActivity}
-          color={timerActive ? "#FF6B6B" : "#4ECDC4"}
-          style={styles.button}
-        />
-        <ControlButton
-          title="Siguiente Actividad"
-          onPress={generateNewActivity}
-          color="#45B7D1"
-          style={styles.button}
-        />
+        {!activityStopped ? (
+          <>
+            <ControlButton
+              title={timerActive ? "Detener" : "Iniciar"}
+              onPress={timerActive ? stopActivity : startActivity}
+              color={timerActive ? "#FF6B6B" : "#4ECDC4"}
+              style={styles.button}
+            />
+            <ControlButton
+              title="Siguiente Actividad"
+              onPress={generateNewActivity}
+              color="#45B7D1"
+              style={styles.button}
+            />
+          </>
+        ) : (
+          <ControlButton
+            title="Reiniciar"
+            onPress={restartActivity}
+            color="#45B7D1"
+            style={[styles.button, { flex: 1 }]}
+          />
+        )}
       </View>
     </View>
   );
@@ -87,15 +107,18 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    width: 300,
+    width: 450,
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
   },
   activityText: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 5
   },
   buttonContainer: {
     flexDirection: 'row',
