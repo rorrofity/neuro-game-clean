@@ -47,17 +47,17 @@ const ColorsAndMovements = () => {
         <Timer active={timerActive} onFinish={() => {}} timerKey={timerKey} gameFinished={false} />
       </View>
       <View style={styles.activityContainer}>
-        <Text style={[styles.activityText, { color: currentColor }]}>{currentActivity}</Text>
+        <Text style={[styles.activityText, { color: currentColor, textShadowColor: 'rgba(0, 0, 0, 0.75)', textShadowOffset: {width: -1, height: 1}, textShadowRadius: 10 }]}>{currentActivity}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <ControlButton
-          title={timerActive ? "Stop" : "Start"}
+          title={timerActive ? "Detener" : "Iniciar"}
           onPress={timerActive ? stopActivity : startActivity}
           color={timerActive ? "#FF6B6B" : "#4ECDC4"}
           style={styles.button}
         />
         <ControlButton
-          title="Next Activity"
+          title="Siguiente Actividad"
           onPress={generateNewActivity}
           color="#45B7D1"
           style={styles.button}
@@ -87,9 +87,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    width: 300,
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   activityText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
   },
