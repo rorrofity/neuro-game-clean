@@ -14,7 +14,11 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Sidebar currentLevel={currentLevel} onLevelSelect={handleLevelSelect} levels={[1, 2, 3]} />
+      <Sidebar 
+        currentLevel={currentLevel} 
+        onLevelSelect={handleLevelSelect} 
+        levels={[1, 2, 3]}
+      />
       <div className="main-content">
         <h1 className="game-title">Actividades de Rehabilitación</h1>
         <ActivitySelector
