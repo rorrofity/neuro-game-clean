@@ -1,41 +1,42 @@
 import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const ControlButton = ({ title, onPress, color, style }) => {
   const gradientColors = color === '#4ECDC4' ? ['#4ECDC4', '#45B7D1'] :
                          color === '#FF6B6B' ? ['#FF6B6B', '#FF8E8E'] :
                          ['#45B7D1', '#4ECDC4'];
 
-  const buttonStyle = {
-    ...styles.button,
-    ...style,
-    backgroundImage: `linear-gradient(to bottom right, ${gradientColors[0]}, ${gradientColors[1]})`,
-  };
-
   return (
-    <button onClick={onPress} style={buttonStyle}>
-      <span style={styles.buttonText}>{title}</span>
-    </button>
+    <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
+      <LinearGradient
+        colors={gradientColors}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 1}}
+        style={styles.gradient}
+      >
+        <Text style={styles.buttonText}>{title}</Text>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   button: {
-    borderRadius: '25px',
+    borderRadius: 25,
     overflow: 'hidden',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.25)',
-    border: 'none',
-    cursor: 'pointer',
-    padding: '10px 20px',
-    minWidth: '120px',
-    display: 'flex',
-    justifyContent: 'center',
+    minWidth: 120,
+  },
+  gradient: {
+    padding: 10,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: '18px',
+    fontSize: 18,
     fontWeight: 'bold',
   },
-};
+});
 
 export default ControlButton;
