@@ -4,12 +4,12 @@ import Timer from './Timer';
 import ControlButton from './ControlButton';
 
 const activities = [
-  'Raise one hand', 'Touch your knee', 'Stand up', 'Step forward', 'Clap',
-  'Turn clockwise', 'Turn counterclockwise', 'Jump in place', 'Squat down',
-  'Touch your feet', 'Stretch your arms up', 'Stretch your arms to the sides',
-  'Do a squat', 'Raise both hands', 'Sway side to side', 'Turn your head to the right',
-  'Turn your head to the left', 'Bend forward', 'Stretch one leg forward',
-  'Roll your shoulders in circles'
+  'Levanta una mano', 'Toca tu rodilla', 'Ponte de pie', 'Da un paso adelante', 'Aplaude',
+  'Gira en sentido horario', 'Gira en sentido antihorario', 'Salta en el lugar', 'Agáchate',
+  'Toca tus pies', 'Estira los brazos hacia arriba', 'Estira los brazos a los lados',
+  'Haz una sentadilla', 'Levanta ambas manos', 'Balancéate de lado a lado', 'Gira la cabeza a la derecha',
+  'Gira la cabeza a la izquierda', 'Inclínate hacia adelante', 'Estira una pierna hacia adelante',
+  'Haz círculos con los hombros'
 ];
 
 const colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FFA500'];
