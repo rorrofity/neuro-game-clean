@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/neuro-game-clean/static/js/main.e4c06ab1.js",
+    "main.js": "/neuro-game-clean/static/js/main.aa13830d.js",
     "static/js/795.047a6e8d.js": "/neuro-game-clean/static/js/795.047a6e8d.js",
     "index.html": "/neuro-game-clean/index.html",
     "manifest.json": "/neuro-game-clean/manifest.json",
     "serve.json": "/neuro-game-clean/serve.json",
-    "main.e4c06ab1.js.map": "/neuro-game-clean/static/js/main.e4c06ab1.js.map",
+    "main.aa13830d.js.map": "/neuro-game-clean/static/js/main.aa13830d.js.map",
     "795.047a6e8d.js.map": "/neuro-game-clean/static/js/795.047a6e8d.js.map"
   },
   "entrypoints": [
     "static/js/795.047a6e8d.js",
-    "static/js/main.e4c06ab1.js"
+    "static/js/main.aa13830d.js"
   ]
 }
