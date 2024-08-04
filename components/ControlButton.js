@@ -1,22 +1,16 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 const ControlButton = ({ title, onPress, color, style }) => {
-  const gradientColors = color === '#4ECDC4' ? ['#4ECDC4', '#45B7D1'] :
-                         color === '#FF6B6B' ? ['#FF6B6B', '#FF8E8E'] :
-                         ['#45B7D1', '#4ECDC4'];
+  const buttonStyle = [
+    styles.button,
+    { backgroundColor: color },
+    style
+  ];
 
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
-      <LinearGradient
-        colors={gradientColors}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 1}}
-        style={styles.gradient}
-      >
-        <Text style={styles.buttonText}>{title}</Text>
-      </LinearGradient>
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
+      <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -24,11 +18,8 @@ const ControlButton = ({ title, onPress, color, style }) => {
 const styles = StyleSheet.create({
   button: {
     borderRadius: 25,
-    overflow: 'hidden',
-    minWidth: 120,
-  },
-  gradient: {
     padding: 10,
+    minWidth: 120,
     alignItems: 'center',
     justifyContent: 'center',
   },

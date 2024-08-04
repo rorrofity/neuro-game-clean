@@ -139,7 +139,7 @@ const Game = ({ currentLevel }) => {
             <ControlButton
               title="Iniciar"
               onPress={startGame}
-              color="#4ECDC4"
+              color="#45B7D1"
               style={styles.startButton}
             />
           ) : gameFinished ? (
