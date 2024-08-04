@@ -12,8 +12,8 @@ const LeftSidebar = ({ currentActivity, onActivitySelect }) => {
           Flechas y colores
         </button>
         <button
-          className={`activity-button ${currentActivity === 'numbers' ? 'active' : ''}`}
-          onClick={() => onActivitySelect('numbers')}
+          className={`activity-button ${currentActivity === 'colors' ? 'active' : ''}`}
+          onClick={() => onActivitySelect('colors')}
         >
           Colores y movimientos
         </button>

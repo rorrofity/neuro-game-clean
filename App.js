@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Game from './components/Game';
+import ColorsAndMovements from './components/ColorsAndMovements';
 import LeftSidebar from './components/LeftSidebar';
 import Sidebar from './components/Sidebar';
 import './src/styles.css';
@@ -22,10 +23,7 @@ const App = () => {
         {currentActivity === 'arrows' ? (
           <Game currentLevel={currentLevel} />
         ) : (
-          <div className="placeholder">
-            <h2>Colores y movimientos</h2>
-            <p>Esta actividad está en desarrollo.</p>
-          </div>
+          <ColorsAndMovements />
         )}
       </div>
       <Sidebar 
