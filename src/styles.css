@@ -44,7 +44,7 @@ body {
   font-size: 48px !important;
   color: #f8ca00 !important;
   -webkit-text-stroke: 1px black !important;
-  text-stroke: 1px black !important;
+  text-wrap-style: 1px black !important;
   text-shadow: none !important;
   padding: 20px !important;
   border: 3px solid black !important;

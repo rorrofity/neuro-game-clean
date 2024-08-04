@@ -124,12 +124,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   activityText: {
-    fontSize: 24,
+    fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.3)',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 5
+    textShadowOffset: {width: -1, height: 2},
+    textShadowRadius: 2
   },
   buttonContainer: {
     flexDirection: 'row',
