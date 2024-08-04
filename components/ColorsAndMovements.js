@@ -20,6 +20,7 @@ const ColorsAndMovements = () => {
   const [timerActive, setTimerActive] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
   const [activityStopped, setActivityStopped] = useState(false);
+  const [finalTime, setFinalTime] = useState(0);
 
   useEffect(() => {
     generateNewActivity();
@@ -47,13 +48,23 @@ const ColorsAndMovements = () => {
   const restartActivity = () => {
     setTimerActive(false);
     setActivityStopped(false);
+    setFinalTime(0);
     setTimerKey(prevKey => prevKey + 1);
+  };
+
+  const handleTimerFinish = (time) => {
+    setFinalTime(time);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.timerContainer}>
-        <Timer active={timerActive} onFinish={() => {}} timerKey={timerKey} gameFinished={activityStopped} />
+        <Timer 
+          active={timerActive} 
+          onFinish={handleTimerFinish} 
+          timerKey={timerKey} 
+          gameFinished={activityStopped} 
+        />
       </View>
       <View style={styles.activityContainer}>
         <Text style={[styles.activityText, { color: currentColor }]}>{currentActivity}</Text>
