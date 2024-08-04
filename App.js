@@ -23,7 +23,7 @@ const App = () => {
           <Game currentLevel={currentLevel} />
         ) : (
           <div className="placeholder">
-            <h2>Números y movimientos</h2>
+            <h2>Colores y movimientos</h2>
             <p>Esta actividad está en desarrollo.</p>
           </div>
         )}
