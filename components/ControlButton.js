@@ -8,7 +8,7 @@ const ControlButton = ({ title, onPress, color, style }) => {
   const buttonStyle = {
     ...styles.button,
     ...style,
-    background: `linear-gradient(to bottom right, ${gradientColors[0]}, ${gradientColors[1]})`,
+    backgroundImage: `linear-gradient(to bottom right, ${gradientColors[0]}, ${gradientColors[1]})`,
   };
 
   return (
