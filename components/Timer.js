@@ -1,26 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const Timer = ({ active, onFinish, timerKey, gameFinished }) => {
   const [time, setTime] = useState(0);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    let interval;
     if (active) {
-      interval = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         setTime((prevTime) => prevTime + 10);
       }, 10);
-    } else if (!gameFinished) {
-      setTime(0);
+    } else {
+      clearInterval(intervalRef.current);
+      if (gameFinished) {
+        onFinish(time);
+      }
     }
-    return () => clearInterval(interval);
-  }, [active, gameFinished, timerKey]);
+
+    return () => clearInterval(intervalRef.current);
+  }, [active, gameFinished, onFinish]);
 
   useEffect(() => {
-    if (!active && gameFinished) {
-      onFinish(time);
+    if (!active && !gameFinished) {
+      setTime(0);
     }
-  }, [active, gameFinished, onFinish, time]);
+  }, [active, gameFinished, timerKey]);
 
   const formatTime = (ms) => {
     const minutes = Math.floor(ms / 60000);
