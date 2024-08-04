@@ -180,10 +180,10 @@ const styles = {
     width: '100%',
   },
   timerContainer: {
-    width: '100%',
+    width: '70%',
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: '20px',
+    marginBottom: '10px',
   },
   boardContainer: {
     width: '100%',
